@@ -5,8 +5,9 @@ const OutfitterManagement = React.lazy(() => import('./views/outfitterManagement
 const Oversight = React.lazy(() => import('./views/oversight/Oversight'))
 const UserManagement = React.lazy(() => import('./views/userManagement/UserManagement'))
 const PatientManagement = React.lazy(() => import('./views/PatientManagement/PatientManagement'))
-const AnalyticsReporting = React.lazy(() => import('./views/analytics&Reporting/Analytics&Reporting'))
-const CommunicationSupport = React.lazy(() => import('./views/communication&Support/Communication&Support'))
+const reportManagement = React.lazy(() => import('./views/reportManagement/reportMangement'))
+// const AnalyticsReporting = React.lazy(() => import('./views/analytics&Reporting/Analytics&Reporting'))
+// const CommunicationSupport = React.lazy(() => import('./views/communication&Support/Communication&Support'))
 // const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 // const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
 
@@ -63,8 +64,9 @@ const routes = [
   { path: '/oversight', name: 'Oversight', element: Oversight },
   { path: '/userManagement', name: 'UserManagement', element: UserManagement },
   { path: '/patientManagement', name: 'PatientManagement', element: PatientManagement },
-  { path: '/analytics&Reporting', name: 'Analytics&Reporting', element: AnalyticsReporting },
-  { path: '/communication&Support', name: 'Communication&Support', element: CommunicationSupport },
+  { path: '/reportManagement', name: 'reportManagement', element: reportManagement },
+  // { path: '/analytics&Reporting', name: 'Analytics&Reporting', element: AnalyticsReporting },
+  // { path: '/communication&Support', name: 'Communication&Support', element: CommunicationSupport },
   // { path: '/theme', name: 'Theme', element: Colors, exact: true },
   // { path: '/theme/colors', name: 'Colors', element: Colors },
   // { path: '/theme/typography', name: 'Typography', element: Typography },

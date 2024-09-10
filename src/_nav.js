@@ -53,7 +53,7 @@ const _nav = [
   {
     component: CNavItem,
     name: 'Report Management',
-    to: '/communication&Support',
+    to: '/reportManagement',
     icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
   },
   // {
