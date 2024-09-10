@@ -154,8 +154,8 @@ const PatientManagement = () => {
               <CTableHeaderCell scope="col">S.No</CTableHeaderCell>
               {/* <CTableHeaderCell scope="col">SSN</CTableHeaderCell> */}
               {/* <CTableHeaderCell scope="col">DOB</CTableHeaderCell> */}
-              <CTableHeaderCell scope="col">Doctor</CTableHeaderCell>
               <CTableHeaderCell scope="col">Patient</CTableHeaderCell>
+              <CTableHeaderCell scope="col">Doctor</CTableHeaderCell>
               <CTableHeaderCell scope="col">Action</CTableHeaderCell>
             </CTableRow>
           </CTableHead>
@@ -225,13 +225,13 @@ const PatientManagement = () => {
     <CModalBody>
       <p>Details for {selectedPatient.firstname || 'N/A'} {selectedPatient.lastname || ''}.</p>
       <ul>
-        <li><strong>Doctor:</strong> {selectedPatient.firstname || 'N/A'} {selectedPatient.lastname || ''}</li>
+        <li><strong>Patient:</strong> {selectedPatient.firstname || 'N/A'} {selectedPatient.lastname || ''}</li>
         {/* <li><strong>SSN:</strong> {selectedPatient.SSN || 'N/A'}</li> */}
         {/* <li>
           <strong>DOB:</strong> 
           {selectedPatient.DOB ? new Date(selectedPatient.DOB).toLocaleDateString() : 'N/A'}
         </li> */}
-        <li><strong>Patient:</strong> {selectedPatient.addedByName ? selectedPatient.addedByName : 'N/A'}</li>
+        <li><strong>Doctor:</strong> {selectedPatient.addedByName ? selectedPatient.addedByName : 'N/A'}</li>
       </ul>
     </CModalBody>
     <CModalFooter>
