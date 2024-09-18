@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => {
   return {
     base: './',
     build: {
-      outDir: 'dist',
+      outDir: 'build',
     },
     css: {
       postcss: {
