@@ -1,7 +1,6 @@
 import React from 'react'
 
-// const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
-const OutfitterManagement = React.lazy(() => import('./views/outfitterManagement/OutfitterManagement'))
+
 const Oversight = React.lazy(() => import('./views/oversight/Oversight'))
 const UserManagement = React.lazy(() => import('./views/userManagement/UserManagement'))
 const PatientManagement = React.lazy(() => import('./views/PatientManagement/PatientManagement'))
@@ -59,8 +58,6 @@ const reportManagement = React.lazy(() => import('./views/reportManagement/repor
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
-  // { path: '/dashboard', name: 'Dashboard', element: Dashboard },
-  { path: '/outfitterManagement', name: 'OutfitterManagement', element: OutfitterManagement },
   { path: '/oversight', name: 'Oversight', element: Oversight },
   { path: '/userManagement', name: 'UserManagement', element: UserManagement },
   { path: '/patientManagement', name: 'PatientManagement', element: PatientManagement },
