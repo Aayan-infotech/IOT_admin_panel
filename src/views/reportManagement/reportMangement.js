@@ -157,7 +157,7 @@ const PatientManagement = () => {
         </CTable>
       </CCard>
 
-      <CModal visible={view} onClose={() => setView(false)}>
+      <CModal size='lg' visible={view} onClose={() => setView(false)}>
         <CModalHeader>
           <CRow className="w-100">
             <CCol xs={12} md={6} className="d-flex align-items-center justify-content-start">
@@ -180,7 +180,16 @@ const PatientManagement = () => {
                 {pdfData.map((work, index) => (
                   <tr key={work._id}>
                     <th scope="row" className="text-center align-middle">{index + 1}</th>
-                    <td className="text-center align-middle">{new Date(work.date).toLocaleDateString()}</td>
+                    <td className="text-center align-middle">
+                      {new Date(work.date).toLocaleString(undefined, {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit'
+                      })}
+                    </td>
                     <td className="text-center align-middle">
                       <button style={{ border: 'none', background: 'none', cursor: 'pointer' }} onClick={() => downloadPdf(work.userId, work.date)}>
                         <FontAwesomeIcon icon={faDownload} style={{ color: 'black' }} />
@@ -202,8 +211,7 @@ const PatientManagement = () => {
         </CModalFooter>
       </CModal>
 
-      {/* PDF Preview Modal */}
-      <CModal visible={pdfPreviewVisible} onClose={() => setPdfPreviewVisible(false)} size="lg">
+      <CModal visible={pdfPreviewVisible} onClose={() => setPdfPreviewVisible(false)} size="xl">
         <CModalHeader closeButton>
           <CModalTitle>PDF Preview</CModalTitle>
         </CModalHeader>
