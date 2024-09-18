@@ -26,7 +26,7 @@ import axios from 'axios'; // Import axios for HTTP requests
 
 import avatar8 from './../../assets/images/avatars/8.jpg';
 
-const API_URL = 'http://3.111.163.2:3002/api/auth/logout'; // Backend API URL
+const API_URL = 'http://localhost:3002/api/auth/logout'; // Backend API URL
 const token = localStorage.getItem('token');
 
 const AppHeaderDropdown = () => {

@@ -44,7 +44,7 @@ const PatientManagement = () => {
   useEffect(() => {
     const fetchPatients = async () => {
       try {
-        const response = await axios.get('http://3.111.163.2:9006/api/patient/');
+        const response = await axios.get('http://localhost:9006/api/patient/');
         const patientData = response.data.data;
 
         // For each patient, fetch user details based on userId
@@ -52,7 +52,7 @@ const PatientManagement = () => {
           patientData.map(async (patient) => {
             if (patient.userId) {
               try {
-                const userResponse = await axios.get(`http://3.111.163.2:9006/api/user/${patient.userId}`);
+                const userResponse = await axios.get(`http://localhost:9006/api/user/${patient.userId}`);
                 const userData = userResponse.data.data;
                 return { ...patient, addedByName: userData.name };
               } catch (error) {
@@ -75,7 +75,7 @@ const PatientManagement = () => {
 
   const handleViewPatient = async (patient) => {
     try {
-      const response = await axios.get(`http://3.111.163.2:9006/api/patient/getPatients/${patient.userId}`);
+      const response = await axios.get(`http://localhost:9006/api/patient/getPatients/${patient.userId}`);
       const patientsArray = response.data.data; 
   
       // Find the patient you want to view
@@ -85,7 +85,7 @@ const PatientManagement = () => {
         setSelectedPatient(selectedPatient);  // Set patient details
   
         // Now fetch the user details using userId
-        const userResponse = await axios.get(`http://3.111.163.2:9006/api/user/${patient.userId}`);
+        const userResponse = await axios.get(`http://localhost:9006/api/user/${patient.userId}`);
         const userDetail = userResponse.data.data;
         const userName = userDetail.name;
         // console.log("userName", userName);
@@ -114,7 +114,7 @@ const PatientManagement = () => {
   const handleAddPatient = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://3.111.163.2:9006/api/auth/register', formData);
+      const response = await axios.post('http://localhost:9006/api/auth/register', formData);
       const newPatient = response.data.patient;
       setPatients([...patients, newPatient]);
       setFormVisible(false);
