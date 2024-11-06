@@ -32,14 +32,14 @@ const PatientManagement = () => {
   useEffect(() => {
     const fetchPatients = async () => {
       try {
-        const response = await axios.get('http://3.111.163.2:9006/api/patient/');
+        const response = await axios.get('http://44.196.192.232:9007/api/patient/');
         const patientData = response.data.data;
 
         const updatedPatients = await Promise.all(
           patientData.map(async (patient) => {
             if (patient.userId) {
               try {
-                const userResponse = await axios.get(`http://3.111.163.2:9006/api/user/${patient.userId}`);
+                const userResponse = await axios.get(`http://44.196.192.232:9007/api/user/${patient.userId}`);
                 const userData = userResponse.data.data;
                 return { ...patient, addedByName: userData.name };
               } catch (error) {
@@ -60,7 +60,7 @@ const PatientManagement = () => {
 
   const handleViewPatient = async (id) => {
     try {
-      const response = await axios.get(`http://3.111.163.2:9006/api/measures/data/${id}`);
+      const response = await axios.get(`http://44.196.192.232:9007/api/measures/data/${id}`);
       const myData = response.data.data;
       setPdfData(myData);
       setView(true);
@@ -72,7 +72,7 @@ const PatientManagement = () => {
   const generatePdfForPreview = async (userId, date) => {
     try {
       const response = await axios.post(
-        'http://3.111.163.2:9006/api/patient/generate-pdf',
+        'http://localhost:9006/api/patient/generate-pdf',
         { userId, date },
         { responseType: 'blob' } // Receive response as a Blob
       );
@@ -95,7 +95,7 @@ const PatientManagement = () => {
   const downloadPdf = async (userId, date) => {
     try {
       const response = await axios.post(
-        'http://3.111.163.2:9006/api/patient/generate-pdf',
+        'http://localhost:9006/api/patient/generate-pdf',
         { userId, date },
         { responseType: 'blob' }
       );

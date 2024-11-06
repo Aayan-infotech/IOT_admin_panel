@@ -40,7 +40,7 @@ const UserManagement = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://3.111.163.2:9006/api/user/');
+        const response = await axios.get('http://44.196.192.232:9007/api/user/');
         setUsers(response.data.data);
       } catch (error) {
         console.error('Error fetching users:', error);
@@ -51,7 +51,7 @@ const UserManagement = () => {
 
   const handleViewUser = async (user) => {
     try {
-      const response = await axios.get(`http://3.111.163.2:9006/api/user/${user._id}`);
+      const response = await axios.get(`http://44.196.192.232:9007/api/user/${user._id}`);
       setSelectedUser(response.data.data);
       setVisible(true);
     } catch (error) {
@@ -61,7 +61,7 @@ const UserManagement = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://3.111.163.2:9006/api/user/${id}`);
+      await axios.delete(`http://44.196.192.232:9007/api/user/${id}`);
       setUsers(users.filter(user => user._id !== id));
     } catch (error) {
       console.error('Error deleting user:', error);
@@ -71,7 +71,7 @@ const UserManagement = () => {
   const handleAddUser = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://3.111.163.2:9006/api/auth/register', formData);
+      const response = await axios.post('http://44.196.192.232:9007/api/auth/register', formData);
       const newUser = response.data.user;
       setUsers([...users, newUser]);
       setFormVisible(false);

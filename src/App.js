@@ -4,6 +4,9 @@ import { useSelector } from 'react-redux'
 import ProtectedRoute from './ProtectedRoute'
 import { CSpinner, useColorModes } from '@coreui/react'
 import './scss/style.scss'
+import about from './views/pages/about/about'
+import privacypolicy from './views/pages/privacypolicy/privacypolicy'
+import TermsAndConditions from './views/pages/termsandcondition/termsandcondition'
 
 // Containers
 const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
@@ -13,6 +16,9 @@ const Login = React.lazy(() => import('./views/pages/login/Login'))
 const Register = React.lazy(() => import('./views/pages/register/Register'))
 const Page404 = React.lazy(() => import('./views/pages/page404/Page404'))
 const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
+const About = React.lazy(() => import('./views/pages/about/about'))
+const Privacypolicy = React.lazy(() => import('./views/pages/privacypolicy/privacypolicy'))
+const Termsandcondition = React.lazy(() => import('./views/pages/termsandcondition/termsandcondition'))
 
 const App = () => {
   const { isColorModeSet, setColorMode } = useColorModes('coreui-free-react-admin-template-theme')
@@ -46,6 +52,10 @@ const App = () => {
           <Route exact path="/register" name="Register Page" element={<Register />} />
           <Route exact path="/404" name="Page 404" element={<Page404 />} />
           <Route exact path="/500" name="Page 500" element={<Page500 />} />
+
+          <Route exact path="/about-page" name="About Page" element={<About />} />
+          <Route exact path="/privacy-policy" name="Privacypolicy Page" element={<Privacypolicy />} />
+          <Route exact path="/terms-and-condition" name="Termsandcondition Page" element={<TermsAndConditions />} />
           <Route element={<ProtectedRoute />}>
             <Route path="*" name="Home" element={<DefaultLayout />} />
           </Route>

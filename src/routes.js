@@ -1,10 +1,18 @@
 import React from 'react'
+// import aboutEditor from './views/Abouteditor/Abouteditor'
 
 
 const Oversight = React.lazy(() => import('./views/oversight/Oversight'))
 const UserManagement = React.lazy(() => import('./views/userManagement/UserManagement'))
 const PatientManagement = React.lazy(() => import('./views/PatientManagement/PatientManagement'))
 const reportManagement = React.lazy(() => import('./views/reportManagement/reportMangement'))
+
+const about = React.lazy(() => import('./views/Abouteditor/Abouteditor'))
+const privacypolicy = React.lazy(() => import('./views/Privacypolicyeditor/Privacypolicyeditor'))
+const termsandconditions = React.lazy(() => import('./views/Termsandconditionseditor/Termsandconditionseditor'))
+// const privacypolicy = React.lazy(() => import('./views/reportManagement/reportMangement'))
+// const termsandconditions = React.lazy(() => import('./views/PatientManagement/PatientManagement'))
+
 // const AnalyticsReporting = React.lazy(() => import('./views/analytics&Reporting/Analytics&Reporting'))
 // const CommunicationSupport = React.lazy(() => import('./views/communication&Support/Communication&Support'))
 // const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
@@ -62,6 +70,10 @@ const routes = [
   { path: '/userManagement', name: 'UserManagement', element: UserManagement },
   { path: '/patientManagement', name: 'PatientManagement', element: PatientManagement },
   { path: '/reportManagement', name: 'reportManagement', element: reportManagement },
+  // { path: '/Blogeditor', name: 'Blogeditor', element: Blogeditor },
+  { path: '/about', name: 'about', element: about },
+  { path: '/privacypolicy', name: 'privacypolicy', element: privacypolicy },
+  { path: '/termsandconditions', name: 'termsandconditions', element: termsandconditions },
   // { path: '/analytics&Reporting', name: 'Analytics&Reporting', element: AnalyticsReporting },
   // { path: '/communication&Support', name: 'Communication&Support', element: CommunicationSupport },
   // { path: '/theme', name: 'Theme', element: Colors, exact: true },

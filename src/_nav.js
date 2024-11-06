@@ -56,6 +56,24 @@ const _nav = [
     to: '/reportManagement',
     icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
   },
+  {
+    component: CNavItem,
+    name: 'About',
+    to: '/about',
+    icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+  },
+  {
+    component: CNavItem,
+    name: 'Privacy Policy',
+    to: '/privacypolicy',
+    icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+  },
+  {
+    component: CNavItem,
+    name: 'Terms and Conditions',
+    to: '/termsandconditions',
+    icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+  },
   // {
   //   component: CNavItem,
   //   name: 'static Content Management',
