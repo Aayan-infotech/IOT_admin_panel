@@ -31,6 +31,8 @@ const PrivacyPolicyEditor = () => {
       axios.get(`http://44.196.192.232:9007/api/privacypolicy/${id}`)
         .then(response => {
           const privacypolicyData = response.data;
+          console.log('gqsgwsdhsds' ,privacypolicyData);
+          
           setPrivacyPolicy({
             ...privacypolicyData,
             date: formatDate(privacypolicyData.date) // Format date for display

@@ -30,6 +30,7 @@ const TermsAndConditionEditor = () => {
       axios.get(`http://44.196.192.232:9007/api/termsandcondition/${id}`)
         .then(response => {
           const termsAndConditionData = response.data;
+          console.log('fdfhdgrfg', termsAndConditionData);
           setTermsAndCondition({
             ...termsAndConditionData,
             date: formatDate(termsAndConditionData.date), // Format date for display

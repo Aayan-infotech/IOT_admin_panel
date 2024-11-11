@@ -2,16 +2,18 @@
 import React, { useEffect, useState } from 'react';
 
 const TermsAndConditions = () => {
-  const termsAndConditionsId = '6728bba1c1827415fc179516';
+  const termsAndConditionsId = '6729e45151a6293384d24e04';
   const [termsData, setTermsData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const fetchTermsData = async () => {
     try {
       const response = await fetch(`http://44.196.192.232:9007/api/termsandcondition/${termsAndConditionsId}`);
+      console.log("111", response)
       if (!response.ok) throw new Error('Network response was not ok');
       
       const data = await response.json();
+  
       setTermsData(data);
     } catch (error) {
       console.error('Error fetching terms and conditions data:', error);

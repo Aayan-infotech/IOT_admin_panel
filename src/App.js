@@ -19,6 +19,7 @@ const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
 const About = React.lazy(() => import('./views/pages/about/about'))
 const Privacypolicy = React.lazy(() => import('./views/pages/privacypolicy/privacypolicy'))
 const Termsandcondition = React.lazy(() => import('./views/pages/termsandcondition/termsandcondition'))
+const Deleteaccountpolicy = React.lazy(() => import('./views/pages/deleteaccountpolicy/Deleteaccountpolicy'))
 
 const App = () => {
   const { isColorModeSet, setColorMode } = useColorModes('coreui-free-react-admin-template-theme')
@@ -56,6 +57,7 @@ const App = () => {
           <Route exact path="/about-page" name="About Page" element={<About />} />
           <Route exact path="/privacy-policy" name="Privacypolicy Page" element={<Privacypolicy />} />
           <Route exact path="/terms-and-condition" name="Termsandcondition Page" element={<TermsAndConditions />} />
+          <Route exact path="/delete-account-policy" name="Delete-account-policy Page" element={<Deleteaccountpolicy />} />
           <Route element={<ProtectedRoute />}>
             <Route path="*" name="Home" element={<DefaultLayout />} />
           </Route>

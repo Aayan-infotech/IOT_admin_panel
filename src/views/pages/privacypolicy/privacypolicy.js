@@ -12,6 +12,7 @@ const PrivacyPolicy = () => {
       if (!response.ok) throw new Error('Network response was not ok');
       
       const data = await response.json();
+      console.log("111", data);
       setPolicyData(data);
     } catch (error) {
       console.error('Error fetching privacy policy data:', error);

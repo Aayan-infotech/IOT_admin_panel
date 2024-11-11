@@ -72,7 +72,7 @@ const PatientManagement = () => {
   const generatePdfForPreview = async (userId, date) => {
     try {
       const response = await axios.post(
-        'http://localhost:9006/api/patient/generate-pdf',
+        'http://44.196.192.232:9007/api/patient/generate-pdf',
         { userId, date },
         { responseType: 'blob' } // Receive response as a Blob
       );
@@ -95,7 +95,7 @@ const PatientManagement = () => {
   const downloadPdf = async (userId, date) => {
     try {
       const response = await axios.post(
-        'http://localhost:9006/api/patient/generate-pdf',
+        'http://44.196.192.232:9007/api/patient/generate-pdf',
         { userId, date },
         { responseType: 'blob' }
       );
