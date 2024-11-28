@@ -1,9 +1,10 @@
-# Stage 1: Build the React app using Vite
-FROM node:18 AS build
+# Stage 1: Build the React app
+FROM node:18 as build
 
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy only necessary files
+# Copy the package.json and package-lock.json files
 COPY package.json ./
 
 # Install dependencies
@@ -12,22 +13,23 @@ RUN npm install
 # Copy the rest of the application files
 COPY . .
 
-# Build the application for production
+# Build the React application for production
 RUN npm run build
 
-# Stage 2: Serve the built app in production mode
-FROM node:18-slim
+# Stage 2: Serve the built app using 'serve'
+FROM node:18
 
+# Install 'serve' globally to serve static files
+RUN npm install -g serve
+
+# Set working directory
 WORKDIR /app
 
-# Install http-server to serve the app
-RUN npm install -g http-server
+# Copy build files from the previous stage
+COPY --from=build /app/build /app
 
-# Copy the production build from the build stage
-COPY --from=build /app/dist /app/dist
+# Expose port 3000 to serve the app
+EXPOSE 2025
 
-# Expose port 2525 for external access
-EXPOSE 2525
-
-# Serve the app in production mode
-CMD ["http-server", "dist", "-p", "2525", "--prod"]
+# Start the app with 'serve'
+CMD ["serve", "-s", ".", "-l", "2025"]
