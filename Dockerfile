@@ -3,7 +3,7 @@ FROM node:18 AS build
 
 WORKDIR /app
 
-# Copy package.json and package-lock.json to install dependencies
+# Copy only necessary files
 COPY package.json ./
 
 # Install dependencies
@@ -12,10 +12,10 @@ RUN npm install
 # Copy the rest of the application files
 COPY . .
 
-# Build the application (output will be in 'dist' folder)
+# Build the application for production
 RUN npm run build
 
-# Stage 2: Serve the built app
+# Stage 2: Serve the built app in production mode
 FROM node:18-slim
 
 WORKDIR /app
@@ -23,11 +23,11 @@ WORKDIR /app
 # Install http-server to serve the app
 RUN npm install -g http-server
 
-# Copy the 'dist' folder from the build stage
+# Copy the production build from the build stage
 COPY --from=build /app/dist /app/dist
 
-# Expose port 2525
+# Expose port 2525 for external access
 EXPOSE 2525
 
-# Command to serve the app on port 2525
-CMD ["http-server", "dist", "-p", "2525"]
+# Serve the app in production mode
+CMD ["http-server", "dist", "-p", "2525", "--prod"]
