@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
 
   const fetchPrivacyPolicyData = async () => {
     try {
-      const response = await fetch(`http://44.196.192.232:9007/api/privacypolicy/${privacyPolicyId}`);
+      const response = await fetch(`http://44.196.64.110:9007/api/privacypolicy/${privacyPolicyId}`);
       if (!response.ok) throw new Error('Network response was not ok');
       
       const data = await response.json();

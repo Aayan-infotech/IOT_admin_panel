@@ -11,7 +11,7 @@ const privacypolicyList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('https://www.panel.efe-travel.com/api/privacypolicys')
+    axios.get('http://44.196.64.110:9007/api/privacypolicys')
       .then(response => setprivacypolicys(response.data))
       .catch(error => console.error('Error fetching privacypolicys:', error));
   }, []);
@@ -22,7 +22,7 @@ const privacypolicyList = () => {
 
   const handleDelete = (id) => {
     if (window.confirm('Are you sure you want to delete this privacypolicy?')) {
-      axios.delete(`https://www.panel.efe-travel.com/api/privacypolicys/${id}`)
+      axios.delete(`http://44.196.64.110:9007/api/privacypolicys/${id}`)
         .then(() => setprivacypolicys(privacypolicys.filter(privacypolicy => privacypolicy._id !== id)))
         .catch(error => console.error('Error deleting privacypolicy:', error));
     }
@@ -63,7 +63,7 @@ const privacypolicyList = () => {
                     <CTableDataCell>
                       {privacypolicy.image1 && (
                         <img
-                          src={`https://www.panel.efe-travel.com/api/uploads/${privacypolicy.image1}`}
+                          src={`http://44.196.64.110:9007/api/uploads/${privacypolicy.image1}`}
                           alt="privacypolicy"
                           style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                         />
@@ -72,7 +72,7 @@ const privacypolicyList = () => {
                     <CTableDataCell>
                       {privacypolicy.image2 && (
                         <img
-                          src={`https://www.panel.efe-travel.com/api/uploads/${privacypolicy.image2}`}
+                          src={`http://44.196.64.110:9007/api/uploads/${privacypolicy.image2}`}
                           alt="privacypolicy"
                           style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                         />

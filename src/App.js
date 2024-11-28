@@ -53,7 +53,6 @@ const App = () => {
           <Route exact path="/register" name="Register Page" element={<Register />} />
           <Route exact path="/404" name="Page 404" element={<Page404 />} />
           <Route exact path="/500" name="Page 500" element={<Page500 />} />
-
           <Route exact path="/about-page" name="About Page" element={<About />} />
           <Route exact path="/privacy-policy" name="Privacypolicy Page" element={<Privacypolicy />} />
           <Route exact path="/terms-and-condition" name="Termsandcondition Page" element={<TermsAndConditions />} />

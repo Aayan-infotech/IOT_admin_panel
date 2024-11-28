@@ -20,7 +20,7 @@ const AboutEditor = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://44.196.192.232:9007/api/about/${id}`)
+      axios.get(`http://44.196.64.110:9007/api/about/${id}`)
         .then(response => {
           const aboutData = response.data;
           setAbout({
@@ -64,7 +64,7 @@ const AboutEditor = () => {
 
     try {
       // Update the existing entry using the specified ID
-      await axios.put(`http://44.196.192.232:9007/api/about/${id}`, formData, {
+      await axios.put(`http://44.196.64.110:9007/api/about/${id}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       navigate('/about-page');

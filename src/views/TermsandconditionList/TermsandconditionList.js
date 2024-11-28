@@ -11,7 +11,7 @@ const termsandconditionList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('https://www.panel.efe-travel.com/api/termsandconditions')
+    axios.get('http://44.196.64.110:9007/api/termsandconditions')
       .then(response => settermsandconditions(response.data))
       .catch(error => console.error('Error fetching termsandconditions:', error));
   }, []);
@@ -22,7 +22,7 @@ const termsandconditionList = () => {
 
   const handleDelete = (id) => {
     if (window.confirm('Are you sure you want to delete this termsandcondition?')) {
-      axios.delete(`https://www.panel.efe-travel.com/api/termsandconditions/${id}`)
+      axios.delete(`http://44.196.64.110:9007/api/termsandconditions/${id}`)
         .then(() => settermsandconditions(termsandconditions.filter(termsandcondition => termsandcondition._id !== id)))
         .catch(error => console.error('Error deleting termsandcondition:', error));
     }
@@ -63,7 +63,7 @@ const termsandconditionList = () => {
                     <CTableDataCell>
                       {termsandcondition.image1 && (
                         <img
-                          src={`https://www.panel.efe-travel.com/api/uploads/${termsandcondition.image1}`}
+                          src={`http://44.196.64.110:9007/api/uploads/${termsandcondition.image1}`}
                           alt="termsandcondition"
                           style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                         />
@@ -72,7 +72,7 @@ const termsandconditionList = () => {
                     <CTableDataCell>
                       {termsandcondition.image2 && (
                         <img
-                          src={`https://www.panel.efe-travel.com/api/uploads/${termsandcondition.image2}`}
+                          src={`http://44.196.64.110:9007/api/uploads/${termsandcondition.image2}`}
                           alt="termsandcondition"
                           style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                         />

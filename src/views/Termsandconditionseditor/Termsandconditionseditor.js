@@ -27,7 +27,7 @@ const TermsAndConditionEditor = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://44.196.192.232:9007/api/termsandcondition/${id}`)
+      axios.get(`http://44.196.64.110:9007/api/termsandcondition/${id}`)
         .then(response => {
           const termsAndConditionData = response.data;
           console.log('fdfhdgrfg', termsAndConditionData);
@@ -72,7 +72,7 @@ const TermsAndConditionEditor = () => {
 
     try {
       // Update the existing entry using the specified ID
-      await axios.put(`http://44.196.192.232:9007/api/termsandcondition/${id}`, formData, {
+      await axios.put(`http://44.196.64.110:9007/api/termsandcondition/${id}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       navigate('/terms-and-condition'); // Navigate to the list after successful update

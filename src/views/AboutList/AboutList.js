@@ -10,7 +10,7 @@ const aboutList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('https://www.panel.efe-travel.com/api/abouts')
+    axios.get('http://44.196.64.110:9007/api/abouts')
       .then(response => setabouts(response.data))
       .catch(error => console.error('Error fetching abouts:', error));
   }, []);
@@ -21,7 +21,7 @@ const aboutList = () => {
 
   const handleDelete = (id) => {
     if (window.confirm('Are you sure you want to delete this about?')) {
-      axios.delete(`https://www.panel.efe-travel.com/api/abouts/${id}`)
+      axios.delete(`http://44.196.64.110:9007/api/abouts/${id}`)
         .then(() => setabouts(abouts.filter(about => about._id !== id)))
         .catch(error => console.error('Error deleting about:', error));
     }
@@ -62,7 +62,7 @@ const aboutList = () => {
                     <CTableDataCell>
                       {about.image1 && (
                         <img
-                          src={`https://www.panel.efe-travel.com/api/uploads/${about.image1}`}
+                          src={`http://44.196.64.110:9007/api/uploads/${about.image1}`}
                           alt="about"
                           style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                         />
@@ -71,7 +71,7 @@ const aboutList = () => {
                     <CTableDataCell>
                       {about.image2 && (
                         <img
-                          src={`https://www.panel.efe-travel.com/api/uploads/${about.image2}`}
+                          src={`http://44.196.64.110:9007/api/uploads/${about.image2}`}
                           alt="about"
                           style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                         />

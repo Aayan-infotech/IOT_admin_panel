@@ -8,7 +8,7 @@ const TermsAndConditions = () => {
 
   const fetchTermsData = async () => {
     try {
-      const response = await fetch(`http://44.196.192.232:9007/api/termsandcondition/${termsAndConditionsId}`);
+      const response = await fetch(`http://44.196.64.110:9007/api/termsandcondition/${termsAndConditionsId}`);
       console.log("111", response)
       if (!response.ok) throw new Error('Network response was not ok');
       

@@ -7,7 +7,7 @@ const About = () => {
 
   const fetchAboutData = async () => {
     try {
-      const response = await fetch(`http://44.196.192.232:9007/api/about/${aboutId}`);
+      const response = await fetch(`http://44.196.64.110:9007/api/about/${aboutId}`);
       if (!response.ok) throw new Error('Network response was not ok');
       
       const data = await response.json();

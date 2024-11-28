@@ -28,7 +28,7 @@ const PrivacyPolicyEditor = () => {
   useEffect(() => {
     if (id) {
       // Fetch privacy policy data using the correct GET API endpoint
-      axios.get(`http://44.196.192.232:9007/api/privacypolicy/${id}`)
+      axios.get(`http://44.196.64.110:9007/api/privacypolicy/${id}`)
         .then(response => {
           const privacypolicyData = response.data;
           console.log('gqsgwsdhsds' ,privacypolicyData);
@@ -74,7 +74,7 @@ const PrivacyPolicyEditor = () => {
 
     try {
       // Update the existing entry using the specified PUT API endpoint
-      await axios.put(`http://44.196.192.232:9007/api/privacypolicy/${id}`, formData, {
+      await axios.put(`http://44.196.64.110:9007/api/privacypolicy/${id}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       navigate('/privacy-policy'); // Redirect after update
