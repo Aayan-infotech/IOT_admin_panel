@@ -24,7 +24,7 @@ WORKDIR /app
 RUN npm install -g http-server
 
 # Copy the dist folder from the build stage
-COPY --from=build /app/dist /app/dist
+COPY --from=dist /app/dist /app/dist
 
 # Expose port 2525
 EXPOSE 2525
