@@ -15,7 +15,7 @@ const AboutEditor = () => {
   const [about, setAbout] = useState({ title: '', category: '', content: '', date: '', author: 'Admin', status: 'draft' });
   const [image1, setImage1] = useState(null);
   const [image2, setImage2] = useState(null);
-  const id = '6729e30c51a6293384d24dff'; // Use the specified ID
+  const id = '674a9ff93aef548f9968ff70'; // Use the specified ID
   const navigate = useNavigate();
 
   useEffect(() => {

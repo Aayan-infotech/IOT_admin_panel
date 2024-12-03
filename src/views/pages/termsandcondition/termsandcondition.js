@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 const TermsAndConditions = () => {
-  const termsAndConditionsId = '6729e45151a6293384d24e04';
+  const termsAndConditionsId = '674b2344e73eedc2f11f6505';
   const [termsData, setTermsData] = useState(null);
   const [loading, setLoading] = useState(true);
 

@@ -22,7 +22,7 @@ const TermsAndConditionEditor = () => {
   });
   const [image1, setImage1] = useState(null);
   const [image2, setImage2] = useState(null);
-  const id  = '6729e45151a6293384d24e04'; // Get the ID from the URL parameters
+  const id  = '674b2344e73eedc2f11f6505'; // Get the ID from the URL parameters
   const navigate = useNavigate();
 
   useEffect(() => {

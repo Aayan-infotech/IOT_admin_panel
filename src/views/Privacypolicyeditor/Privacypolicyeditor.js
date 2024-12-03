@@ -22,7 +22,7 @@ const PrivacyPolicyEditor = () => {
   });
   const [image1, setImage1] = useState(null);
   const [image2, setImage2] = useState(null);
-  const id = '6729e44351a6293384d24e02'; // Use the specified ID
+  const id = '67495cf8f4bca83ed7892613'; // Use the specified ID
   const navigate = useNavigate();
 
   useEffect(() => {

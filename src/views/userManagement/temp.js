@@ -50,7 +50,7 @@ const UserManagement = () => {
 
     const fetchUsers = async () => {
         try {
-            const response = await axios.get('http://3.111.163.2:9006/api/user/');
+            const response = await axios.get('http://44.196.64.110:9007/api/user/');
             setUsers(response.data.data);
         } catch (error) {
             setError('Error fetching users');
@@ -60,7 +60,7 @@ const UserManagement = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://3.111.163.2:9006/api/user/${id}`);
+            await axios.delete(`http://44.196.64.110:9007/api/user/${id}`);
             setUsers(users.filter(user => user._id !== id));
         } catch (error) {
             setError('Error deleting user');
@@ -71,7 +71,7 @@ const UserManagement = () => {
     const handleAddUser = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://3.111.163.2:9006/api/user/register', formData);
+            const response = await axios.post('http://44.196.64.110:9007/api/user/register', formData);
             setFormVisible(false);
             resetFormData();
             fetchUsers(); // Re-fetch users after adding a new user

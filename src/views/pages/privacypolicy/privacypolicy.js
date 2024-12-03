@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 const PrivacyPolicy = () => {
-  const privacyPolicyId = '6729e44351a6293384d24e02';
+  const privacyPolicyId = '67495cf8f4bca83ed7892613';
   const [policyData, setPolicyData] = useState(null);
   const [loading, setLoading] = useState(true);
 

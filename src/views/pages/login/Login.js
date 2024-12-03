@@ -31,15 +31,10 @@ const Login = () => {
     try {
       const response = await axios.post(API_URL, { email, password });
       console.log(response.data.data);
-      // const token = response
-      // localStorage.setItem(token)
       if (response.status === 200) {
         const { token } = response.data;
-        // console.log(// Import necessary Font Awesome components and icons
-          // import { faEdit, faTrash, faEye } from '@fortawesome/free-solid-svg-icons');
-        localStorage.setItem('token', token); // Store token in localStorage
-        // Redirect to dashboard or another route upon successful login
-        navigate('/userManagement'); // Use navigate hook to redirect
+        localStorage.setItem('token', token);
+        navigate('/userManagement'); 
       } else {
         setError(response.data.message || 'Failed to login. Please check your credentials.');
       }

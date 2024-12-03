@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const About = () => {
-  const aboutId = '6729e30c51a6293384d24dff';
+  const aboutId = '674a9ff93aef548f9968ff70';
   const [aboutData, setAboutData] = useState(null);
   const [loading, setLoading] = useState(true);
 
