@@ -5,42 +5,46 @@ const DeleteAccountPolicy = () => {
     <div style={styles.container}>
       <div style={styles.content}>
         <h1 style={styles.heading}>Delete Account Policy</h1>
-        <p style={styles.lastUpdated}><em>Last updated: August 31, 2024</em></p>
+        <p style={styles.lastUpdated}><em>Last updated: December 4, 2024</em></p>
 
         <p style={styles.paragraph}>
-          At IOT, we respect your right to privacy and understand that you may wish to delete your account.
-          This policy outlines the process for account deletion.
+          This policy outlines the procedure for deleting user accounts for an application designed exclusively for internal use by employees. The app is restricted to employees who have been pre-verified, and account creation is not available to the public. This policy ensures compliance with relevant data privacy regulations and the latest requirements set forth by Google.
         </p>
 
-        <h2 style={styles.subheading}>1. Requesting Account Deletion</h2>
-        <p style={styles.paragraph}>If you wish to delete your IOT account, please follow these steps:</p>
-        <ul style={styles.list}>
-          <li>Log in to your Urodoc account.</li>
-          <li>Navigate to the account settings page.</li>
-          <li>Select the "Delete Account" option.</li>
-          <li>Confirm your request by following the on-screen instructions.</li>
-        </ul>
-
-        <h2 style={styles.subheading}>2. Data Deletion</h2>
-        <p style={styles.paragraph}>Upon confirming your account deletion request, we will:</p>
-        <ul style={styles.list}>
-          <li>Permanently delete your account and all associated data from our servers.</li>
-          <li>Remove your personal information from our active databases.</li>
-          <li>
-            Retain certain information as required by law or for legitimate business purposes
-            (e.g., to comply with legal obligations, resolve disputes, and enforce our agreements).
-          </li>
-        </ul>
-
-        <h2 style={styles.subheading}>3. Processing Time</h2>
+        <h2 style={styles.subheading}>1. Account Deletion Request</h2>
         <p style={styles.paragraph}>
-          Account deletion requests are typically processed within 30 days. You will receive a confirmation email
-          once your account has been successfully deleted.
+          Employees who wish to delete their accounts can do so by following the procedure outlined below:
+        </p>
+        <ul style={styles.list}>
+          <li><strong>Submitting a Request:</strong> Employees may request the deletion of their account by submitting a request via the designated web portal or weblink. This link is accessible only to authorized users within the company’s internal network.</li>
+          <li><strong>Verification:</strong> Upon receiving a deletion request, the system will verify the identity of the requester to ensure that the account belongs to the employee making the request.</li>
+          <li><strong>Processing the Request:</strong> After verification, the account deletion process will be initiated. The user’s data will be permanently removed from the app’s database within [X days] of the request.</li>
+        </ul>
+
+        <h2 style={styles.subheading}>2. Access to the Deletion Portal</h2>
+        <p style={styles.paragraph}>
+          <strong>Internal Access Only:</strong> The account deletion portal is accessible only within the organization’s network and is not available to the general public. Only current employees with valid credentials can access the portal.
         </p>
 
-        <h2 style={styles.subheading}>4. Contact Us</h2>
+        <h2 style={styles.subheading}>3. Data Deletion</h2>
         <p style={styles.paragraph}>
-          If you encounter any issues or have questions about deleting your account, please contact our support team.
+          <strong>Data Removed:</strong> Once the account deletion is confirmed, all personal data associated with the account will be permanently deleted from the system. This includes login credentials, profile information, and any other data linked to the account.
+        </p>
+        <p style={styles.paragraph}>
+          <strong>Exceptions:</strong> Certain data required for legal, compliance, or operational purposes may be retained in a non-identifiable format, as permitted by applicable laws.
+        </p>
+
+        <h2 style={styles.subheading}>4. Consequences of Account Deletion</h2>
+        <p style={styles.paragraph}>
+          <strong>Service Termination:</strong> Deleting an account will result in the termination of access to the app and any associated services. Employees should ensure that they have no pending tasks or essential data within the app before requesting deletion.
+        </p>
+        <p style={styles.paragraph}>
+          <strong>Irreversibility:</strong> Once an account is deleted, the process is irreversible. Employees who wish to regain access to the app will need to undergo the account creation process again, subject to organizational approval.
+        </p>
+
+        <h2 style={styles.subheading}>5. Support and Contact Information</h2>
+        <p style={styles.paragraph}>
+          For any questions or issues related to account deletion, employees may contact the support team or IT department at the designated support email or phone number.
         </p>
       </div>
     </div>
@@ -84,6 +88,7 @@ const styles = {
   },
   list: {
     paddingLeft: "20px",
+    marginBottom: "20px",
   },
 };
 
